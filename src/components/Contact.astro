@@ -1,0 +1,59 @@
+---
+import PageSection from "./PageSection.astro"
+import PageSectionHeader from "./PageSectionHeader.astro"
+---
+<PageSection classes="bg-base-200" id="contact">
+    <PageSectionHeader class="text-2xl">Contact</PageSectionHeader>
+    <div class="flex">
+        <form class="mx-[auto] w-full max-w-md">
+            <fieldset class="fieldset">
+                <label class="fieldset-legend" for="fullname">Full name</label>
+                <input type="text" class="input w-full" id="fullname" name="fullname" placeholder="Full name" required />
+            </fieldset>
+            <fieldset class="fieldset">
+                <label class="fieldset-legend" for="email">Email</label>
+                <input type="email" class="input w-full" id="email" name="email" placeholder="Email" required />
+            </fieldset>
+            <fieldset class="fieldset">
+                <label class="fieldset-legend" for="type">Type</label>
+                <select class="select w-full" id="type" name="type" required>
+                    <option disabled selected value="">Select a type</option>
+                    <option>Inquiry</option>
+                    <option>Other</option>
+                </select>
+            </fieldset>
+            <fieldset class="fieldset">
+                <label class="fieldset-legend" for="message">Message</label>
+                <textarea id="message" name="message" class="textarea field-sizing-content w-full" required></textarea>
+            </fieldset>
+            <fieldset class="fieldset mt-4">
+                <button type="submit" class="btn btn-accent">Send</button>
+            </fieldset>
+        </form>
+    </div>
+</PageSection>
+
+<script>
+import {actions} from 'astro:actions';
+
+document.querySelector("form")?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const { data, error } = await actions.inquiry(new FormData(form));
+    console.log('Data', data)
+    console.log('Error', error)
+});
+</script>
+
+<style>
+form:invalid [type=submit] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+    border: 2px solid var(--color-error, red);
+}
+</style>

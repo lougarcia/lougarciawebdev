@@ -1,0 +1,45 @@
+---
+export const prerender = true;
+
+import MainLayout from "@/layouts/MainLayout.astro";
+import HtmlLayout from "@/layouts/HtmlLayout.astro";
+import { header } from "@/data/navLinks"
+
+const blogLink = header.find(l => l.text === 'Blogs');
+
+---
+
+<HtmlLayout>
+    <MainLayout>
+        <div class="flex flex-row-reverse items-start justify-end gap-8 w-[min(960px,100%)] mx-auto px-2 lg:px-0 py-8">
+            <div>
+                <div class="breadcrumbs text-sm">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/blogs">Blogs</a></li>
+                        <li>News</li>
+                    </ul>
+                </div>
+                <h1 class="text-4xl font-serif">News</h1>
+            </div>
+            <aside>
+                <ul>
+                    <li class="menu bg-base-200 rounded-box w-44">
+                        <h2 class="menu-title">Types</h2>
+                        <ul>
+                            {blogLink?.links?.map((l) => (
+                                <li>
+                                    <a href={l.href}>{l.text}</a>
+                                </li>
+                            ))}
+                        </ul>
+                    </li>
+                    <li class="menu bg-base-200 rounded-box w-44 mt-4">
+                        <h2 class="menu-title">Tags</h2>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </MainLayout>
+</HtmlLayout>
+

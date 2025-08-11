@@ -1,0 +1,40 @@
+---
+import PageSection from "./PageSection.astro"
+import PageSectionHeader from "./PageSectionHeader.astro"
+import SkillIconWrapper from "./SkillIconWrapper.astro"
+import Skillset from "./Skillset.astro"
+import SkillLibraries from "./SkillLibraries.astro"
+import SkillTools from "./SkillTools.astro"
+---
+<PageSection classes="bg-base-200" id="about">
+    <PageSectionHeader>About</PageSectionHeader>
+    <div class="text-center mb-16 prose mx-auto">
+        <p>
+            I’m a full-stack developer with 20 years of experience building
+            high-quality, user-focused digital solutions. Passionate about
+            open-source frameworks and tools, I pair exceptional UI/UX design
+            skills with solid back-end expertise to deliver products that are
+            both functional and visually engaging.
+        </p>
+        <p>
+            I may not always know the
+            solution instantly, but I excel at finding it quickly - drawing on
+            experience, research, and the right resources to get the job done.
+            With a proven ability to lead teams and drive projects to success,
+            I turn complex challenges into elegant, effective solutions.
+        </p>
+    </div>
+    <div class="flex flex-col gap-4 lg:flex-row max-w-fit mx-auto">
+        <div>
+            <Skillset />
+        </div>
+
+        <div>
+            <SkillLibraries />
+        </div>
+
+        <div>
+            <SkillTools />
+        </div>
+    </div>
+</PageSection>

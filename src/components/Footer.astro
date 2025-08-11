@@ -1,0 +1,42 @@
+---
+import LinkedInIcon from "@/assets/icons/linkedin.svg"
+import GithubDarkIcon from "@/assets/icons/github_dark.svg"
+import GithubLightIcon from "@/assets/icons/github_light.svg"
+import {header as links} from "@/data/navLinks"
+const blogLink = links.find(l => l.text === 'Blogs')
+---
+<footer class="w-100dvw px-2 md:px-3 bg-base-300 text-xs py-12 shadow-2xl">
+    <div class="flex flex-col-reverse gap-8 text-center md:flex-row md:text-start md:gap-12 m-[0_auto] w-[min(960px,100%)]">
+        <div class="flex-8/12">
+            <p>
+                This site is a little window into my journey as a developer -
+                a place to share my skills, projects, and experiences.
+                Everything here comes from real work I’ve done, shaped by
+                curiosity and a love for solving problems. Thanks for stopping
+                by, and feel free to connect if something here sparks an idea!
+            </p>
+            <div class="mt-4 md:mt-2">
+                <a href="/terms-of-use" class="link text-secondary-content">Terms of use</a>
+                <span class="opacity-50 mx-1">&bull;</span>
+                <a href="/privacy-policy" class="link text-secondary-content">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="flex-2/12">
+            <a href={blogLink?.href} class="font-bold">{blogLink?.text}</a>
+            <ul class="mt-2">
+                {blogLink?.links?.map(link => (
+                    <li><a href={link.href}>{link.text}</a></li>
+                ))}
+            </ul>
+        </div>
+        <div class="flex-2/12 justify-center md:justify-end flex flex-row gap-1">
+            <a href="https://www.linkedin.com/in/louanthonygarcia/" target="_blank" class="btn btn-circle">
+                <LinkedInIcon width={24} height={24} />
+            </a>
+            <a href="https://github.com/lougarcia" target="_blank" class="btn btn-circle">
+                <GithubDarkIcon width={24} height={24} class="hidden dark:block" />
+                <GithubLightIcon width={24} height={24} class="block dark:hidden" />
+            </a>
+        </div>
+    </div>
+</footer>

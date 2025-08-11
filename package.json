@@ -1,5 +1,5 @@
 {
-  "name": "mywebsite01",
+  "name": "lougarciawebdev",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,6 +9,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.11.0"
+    "@astrojs/cloudflare": "^12.6.3",
+    "@astrojs/mdx": "^4.3.3",
+    "@astrojs/node": "^9.4.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "astro": "^5.12.8",
+    "daisyui": "^5.0.50",
+    "resend": "^6.0.1",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250810.0",
+    "@tailwindcss/typography": "^0.5.16"
   }
 }

@@ -1,0 +1,40 @@
+---
+
+---
+export const prerender = true;
+import HtmlLayout from "@/layouts/HtmlLayout.astro";
+import SimpleLayout from "@/layouts/SimpleLayout.astro";
+import PageSection from "@/components/PageSection.astro";
+
+<HtmlLayout>
+    <SimpleLayout>
+        <PageSection maxContentWidth="800">
+            <div class="pb-12 prose prose-h1:font-serif">
+                # Terms of use
+                Last updated: August 9, 2025
+
+                Welcome to my portfolio website. By viewing or using this site, you agree to the following terms:
+
+                1. Ownership of Content
+                All text, images, designs, and other works on this site are created by me (unless stated otherwise) and are protected by copyright. You may not copy, reproduce, or use any content without my written permission.
+
+                2. Accuracy of Information
+                I try to keep all information up to date and accurate, but I make no guarantees. Content is provided “as is,” and I’m not responsible for any errors, omissions, or results of using the information.
+
+                3. External Links
+                This site may contain links to other websites. I am not responsible for the content or policies of those sites.
+
+                4. Contact & Use of Information
+                If you contact me through this site, please use professional and respectful communication. I will handle any personal information you provide according to my Privacy Policy.
+
+                5. Changes to These Terms
+                I may update these terms from time to time. The latest version will always be posted on this page.
+
+                If you have questions about these terms, please contact me at lgarciawebdev@outlook.com.
+            </div>
+            <a href="/" class="btn ps-2.5">
+                &blacktriangleleft; Back to home
+            </a>
+        </PageSection>
+    </SimpleLayout>
+</HtmlLayout>

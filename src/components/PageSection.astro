@@ -1,0 +1,8 @@
+---
+const { id, classes, maxContentWidth } = Astro.props
+---
+<section class=`w-100dvw px-2 py-12 md:py-20 md:px-3 ${classes}` id={id}>
+    <div class=`m-[0_auto] w-[min(${maxContentWidth || '960'}px,100%)]`>
+        <slot />
+    </div>
+</section>

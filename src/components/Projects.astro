@@ -1,0 +1,52 @@
+---
+import PageSection from "./PageSection.astro"
+import PageSectionHeader from "./PageSectionHeader.astro"
+import BookIcon from "@/assets/icons/book_2.svg"
+import ChatIcon from "@/assets/icons/chat.svg"
+import WebIcon from "@/assets/icons/web.svg"
+import ProjectCard from "@/components/ProjectCard.astro"
+---
+<PageSection classes="bg-base-100 mx-2" id="projects">
+    <div class="card bg-base-200 w-full shadow-lg p-4 md:p-8 -mt-12">
+        <PageSectionHeader subtitle="These are my most recent personal projects">
+            Projects
+            <p slot="subtitle" class="text-lg/6 font-sans">These are my most recent <span class="underline">personal</span> projects</p>
+        </PageSectionHeader>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 items-stretch gap-8 md:flex-row mt-4 md:-mt-2">
+            <div class="lg:col-span-2">
+                <ProjectCard classes="lg:card-side" githubLink="https://github.com/lougarcia/p2pchat_vuejs">
+                    <Fragment slot="projectTitle">
+                        <ChatIcon fill="currentColor" />
+                        Chat App<sup class="text-xs">v0.0.1</sup>
+                    </Fragment>
+                    <Fragment slot="projectDescription">
+                        <p>A simple app made with Vue, PeerJS and PicoCSS</p>
+                    </Fragment>
+                </ProjectCard>
+            </div>
+            <div>
+                <ProjectCard checkoutText="Coming soon!">
+                    <Fragment slot="projectTitle">
+                        <BookIcon fill="currentColor" />
+                        Ebook Reader<sup class="text-xs">v0.0.1</sup>
+                    </Fragment>
+                    <Fragment slot="projectDescription">
+                        <p>Made in NextJS and Electron</p>
+                    </Fragment>
+                </ProjectCard>
+            </div>
+            <div>
+                <ProjectCard checkoutText="Already here!">
+                    <Fragment slot="projectTitle">
+                        <WebIcon fill="currentColor" />
+                        This Website<sup class="text-xs">v0.0.1</sup>
+                    </Fragment>
+                    <Fragment slot="projectDescription">
+                        <p>Made in AstroJS with DaisyUI/Tailwind</p>
+                    </Fragment>
+                </ProjectCard>
+            </div>
+        </div>
+    </div>
+</PageSection>

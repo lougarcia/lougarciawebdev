@@ -1,0 +1,37 @@
+---
+import GithubDark from "@/assets/icons/github_dark.svg"
+import OpenLink from "@/assets/icons/open_in_new.svg"
+import NoImage from "@/assets/icons/no_image.svg"
+import { Image } from "astro:assets"
+
+const {githubLink, checkoutLink, checkoutText, classes} = Astro.props
+
+---
+<div class:list={[`card bg-base-100 shadow-sm`, classes]}>
+    <figure class="w-full p-4 bg-base-300 text-base-content min-h-40" title="No Photo">
+        <div class="flex items-center justify-center">
+            <NoImage width={60} height={60} class="text-base-content" fill="currentColor" />
+        </div>
+    </figure>
+    <div class="card-body min-w-[35%] min-h-50">
+        <h3 class="card-title">
+            <slot name="projectTitle" />
+        </h3>
+        <slot name="projectDescription" />
+        <div class="card-actions justify-end flex-nowrap">
+            <a href={githubLink ? githubLink : '#'} target="_blank" class="btn btn-accent text-sm">
+                <GithubDark width={24} height={24}/>
+            </a>
+            {checkoutLink ? (
+                <a href={checkoutLink ? checkoutLink : '#'} target="_blank" class="btn btn-accent">
+                    {checkoutText ? checkoutText : 'Check it out'}
+                    <OpenLink fill="currentColor" />
+                </a>
+            ) : (
+                <div class="btn btn-accent">
+                    {checkoutText ? checkoutText : 'Check it out'}
+                </div>
+            )}
+        </div>
+    </div>
+</div>

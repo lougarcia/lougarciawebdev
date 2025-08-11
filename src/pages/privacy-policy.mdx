@@ -1,0 +1,42 @@
+---
+
+---
+export const prerender = true;
+
+import HtmlLayout from "@/layouts/HtmlLayout.astro";
+import SimpleLayout from "@/layouts/SimpleLayout.astro";
+import PageSection from "@/components/PageSection.astro";
+
+<HtmlLayout>
+    <SimpleLayout>
+        <PageSection maxContentWidth="800">
+            <div class="pb-12 prose prose-h1:font-serif">
+                # Privacy Policy
+                Last updated: August 9, 2025
+
+                Your privacy is important to me. This policy explains how I handle any personal information you share through this site.
+
+                1. Information I Collect
+                If you contact me via email or a contact form, I may collect your name, email address, and any other details you choose to share.
+
+                2. How I Use Your Information
+                I use your information only to respond to your message or inquiry. I do not sell, rent, or share your personal information with third parties, unless required by law.
+
+                3. Cookies & Tracking
+                This site may use basic cookies or analytics tools to understand general traffic patterns. These do not personally identify you.
+
+                4. Data Security
+                I take reasonable measures to protect any personal information you send, but I cannot guarantee complete security over the internet.
+
+                5. Your Rights
+                You can request that I delete any personal information you’ve sent me. To do so, please contact me at lgarciawebdev@outlook.com.
+
+                6. Changes to This Policy
+                I may update this Privacy Policy from time to time. The latest version will always be posted on this page.
+            </div>
+            <a href="/" class="btn ps-2.5">
+                &blacktriangleleft; Back to home
+            </a>
+        </PageSection>
+    </SimpleLayout>
+</HtmlLayout>

@@ -1,0 +1,51 @@
+---
+import SkillIconWrapper from "./SkillIconWrapper.astro"
+
+import TailwindIcon from "@/assets/icons/tailwindcss.svg"
+import BootsrapIcon from "@/assets/icons/bootstrap.svg"
+import DaisyUIIcon from "@/assets/icons/daisyui.svg"
+import ElectronIcon from "@/assets/icons/electron.svg"
+import AuthjsIcon from "@/assets/icons/authjs.svg"
+import PiniaIcon from "@/assets/icons/pinia.svg"
+import StripeLightIcon from "@/assets/icons/stripe_light.svg"
+import StripeDarkIcon from "@/assets/icons/stripe_dark.svg"
+import BetterAuthLightIcon from "@/assets/icons/better_auth_light.svg"
+import BetterAuthDarkIcon from "@/assets/icons/better_auth_dark.svg"
+import ZodIcon from "@/assets/icons/zod.svg"
+---
+<h3 class="text-2xl text-center mb-4">Libraries</h3>
+<div class="flex flex-row gap-2 max-w-min mx-auto mb-2">
+    <SkillIconWrapper title="Pinia">
+        <PiniaIcon width={40} height={40} />
+    </SkillIconWrapper>
+    <SkillIconWrapper title="Tailwind UI">
+        <TailwindIcon width={40} height={40} />
+    </SkillIconWrapper>
+    <SkillIconWrapper title="Bootsrap">
+        <BootsrapIcon width={40} height={40} />
+    </SkillIconWrapper>
+    <SkillIconWrapper title="Daisy UI">
+        <DaisyUIIcon width={40} height={40} />
+    </SkillIconWrapper>
+</div>
+<div class="flex flex-row gap-2 max-w-min mx-auto mb-2">
+    <SkillIconWrapper title="Zod">
+        <ZodIcon width={40} height={40} />
+    </SkillIconWrapper>
+    <SkillIconWrapper title="Auth JS">
+        <AuthjsIcon width={40} height={40} />
+    </SkillIconWrapper>
+    <SkillIconWrapper title="Stripe">
+        <StripeLightIcon width={40} height={40} class="block dark:hidden" />
+        <StripeDarkIcon width={40} height={40} class="hidden dark:block" />
+    </SkillIconWrapper>
+    <SkillIconWrapper title="Better Auth">
+        <BetterAuthLightIcon width={40} height={40} class="block dark:hidden" />
+        <BetterAuthDarkIcon width={40} height={40} class="hidden dark:block" />
+    </SkillIconWrapper>
+</div>
+<div class="flex flex-row gap-2 max-w-min mx-auto mb-2">
+    <SkillIconWrapper title="Electron">
+        <ElectronIcon width={40} height={40} />
+    </SkillIconWrapper>
+</div>

@@ -1,0 +1,65 @@
+---
+import PageSection from "./PageSection.astro"
+import PageSectionHeader from "./PageSectionHeader.astro"
+
+import { getCollection, render } from 'astro:content'
+
+const experiences = (await getCollection('experiences')).sort(
+    (a, b) => b.id.localeCompare(a.id, undefined, { sensitivity: 'base' })
+)
+---
+<PageSection classes="bg-base-100" id="experience">
+    <PageSectionHeader>Work Experience</PageSectionHeader>
+    <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+        {experiences.slice(0, 4).map(async (expi, i) => {
+            const {Content, headings} = await render(expi)
+
+            return (
+                <li class="animate-on-scroll">
+                    <div class="timeline-middle">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            class="h-5 w-5 -translate-y-1"
+                        >
+                            <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                            clip-rule="evenodd"
+                            />
+                        </svg>
+                    </div>
+                    <div class:list={[i%2==0 ? 'timeline-end ': 'timeline-start md:text-end', 'mb-10 ']}>
+                        <time class="font-mono font-sm block">{expi.data.duration}</time>
+                        <div class="text-lg font-black">{expi.data.title}</div>
+                        <div class="font-serif italic mb-2">{expi.data.company}</div>
+                        <div class="font-sans mb-2 prose">{expi.data.summary}</div>
+                        <button class="link" onclick={`modal_${i}.showModal()`}>Read more...</button>
+                        <dialog id={`modal_${i}`} class="modal">
+                            <div class="modal-box p-2 md:p-6 text-start max-h-[90dvh]">
+                                <div class="float-end md:-translate-y-2">
+                                    <button class="btn btn-sm btn-circle text-lg" onclick={`modal_${i}.close()`}>
+                                        &Cross;
+                                        <span class="sr-only">Close dialog</span>
+                                    </button>
+                                </div>
+                                <div class="prose">
+                                    <Content />
+                                </div>
+                            </div>
+                        </dialog>
+                    </div>
+                    <hr />
+                    {/* Modal */}
+                </li>
+            )
+        })}
+        <li class="animate-on-scroll">
+            <div class="timeline-middle">
+                <div class="text-center text-2xl -translate-y-1">&bull;&bull;&bull;</div>
+                <a href="#contact" class="btn btn-sm shadow">Contact me for a complete list in my CV</a>
+            </div>
+        </li>
+    </ul>
+</PageSection>
