@@ -1,2 +1,173 @@
-User-agent: *
+# ==================================================
+# AI CRAWLERS
+# ==================================================
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Applebot
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+User-agent: DataForSEOBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: MuckRackBot
+Disallow: /
+
+User-agent: NewsNowBot
+Disallow: /
+
+User-agent: SeekrBot
+Disallow: /
+
+User-agent: Coqui
+Disallow: /
+
+User-agent: FemtobitBot
+Disallow: /
+
+User-agent: KagiBot
+Disallow: /
+
+User-agent: NeevaBot
+Disallow: /
+
+User-agent: PhindBot
+Disallow: /
+
+User-agent: SerpApiBot
+Disallow: /
+
+User-agent: VelenPublicWebCrawler
+Disallow: /
+
+User-agent: AI2Bot
+Disallow: /
+
+User-agent: Ai2Bot-Dolma
+Disallow: /
+
+User-agent: AcademicBot
+Disallow: /
+
+# ==================================================
+# SEARCH ENGINE CRAWLERS
+# ==================================================
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Bingbot
+Disallow: /
+
+User-agent: Slurp
+Disallow: /
+
+User-agent: DuckDuckBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+User-agent: Sogou
+Disallow: /
+
+User-agent: Exabot
+Disallow: /
+
+User-agent: facebot
+Disallow: /
+
+User-agent: facebookexternalhit
+Disallow: /
+
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: SeznamBot
+Disallow: /
+
+User-agent: CensysInspect
+Disallow: /
+
+User-agent: MojeekBot
+Disallow: /
+
+User-agent: Gigabot
+Disallow: /
+
+User-agent: SiteAuditBot
+Disallow: /
+
+# ==================================================
+# OTHER KNOWN SCRAPERS / AGGREGATORS
+# ==================================================
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: Screaming Frog SEO Spider
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: SurdotlyBot
+Disallow: /
+
+User-agent: ZoominfoBot
+Disallow: /
+
+User-agent: LinkfluenceBot
+Disallow: /
+
+User-agent: ArchiveBot
 Disallow: /
