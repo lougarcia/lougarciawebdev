@@ -1,0 +1,32 @@
+---
+export const prerender = true;
+
+import BlogLayout from "@/layouts/BlogLayout.astro";
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const posts = await getCollection('news');
+    return posts.map(post => ({
+        params: { id: post.data.slug.replace(/^\/blogs\/news\//, '') },
+        props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+<BlogLayout>
+    <div class="grow">
+        <div class="breadcrumbs text-sm">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blogs">Blogs</a></li>
+                <li><a href="/blogs/news">News</a></li>
+                <li>{post.data.title}</li>
+            </ul>
+        </div>
+        <div class="prose">
+            <Content />
+        </div>
+    </div>
+</BlogLayout>

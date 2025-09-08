@@ -1,26 +1,28 @@
 ---
 export const prerender = true;
+import { getCollection } from 'astro:content';
 
-import BlogLayout from "@/layouts/BlogLayout.astro";
-import { getCollection } from "astro:content";
+import BlogLayout from '@/layouts/BlogLayout.astro';
 
-const posts = (await getCollection('posts')).sort(
+const snippets = (await getCollection('snippets')).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
 ---
 
 <BlogLayout>
-    <div>
+    <div class="grow">
         <div class="breadcrumbs text-sm">
             <ul>
                 <li><a href="/">Home</a></li>
-                <li>Blogs</li>
+                <li><a href="/blogs">Blogs</a></li>
+                <li>Snippets</li>
             </ul>
         </div>
-        <h1 class="text-4xl font-serif">Blogs</h1>
+        <h1 class="text-4xl font-serif">Snippets</h1>
         <div class="prose mt-8">
             <ul>
-                {posts.map(post => (
+                {snippets.map(post => (
                     <li>
                         <a href={`${post.id}`}>
                             {post.data.title}
@@ -31,9 +33,7 @@ const posts = (await getCollection('posts')).sort(
                         <div class="text-sm">
                             {post.data.summary}
                         </div>
-                        <span class="badge badge-sm badge-ghost rounded-xs">
-                            {post.data.postType}
-                        </span>
+                        <span class="badge badge-sm badge-ghost rounded-xs">Snippets</span>
                     </li>
                 ))}
             </ul>

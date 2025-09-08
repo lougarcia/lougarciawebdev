@@ -1,0 +1,60 @@
+---
+title: Animated Gradient Border
+summary: Animate borders using registered custom properties
+slug: /blogs/snippets/animated-gradient-border
+pubDate: 2025-09-08
+tags: css, animation, gradient, border
+postType: Snippets
+---
+import AnimatedGradientBorder from "@/components/previews/AnimatedGradientBorder.astro"
+
+# Animated Gradient Border
+
+Using registered custom properties
+
+## Setup
+
+### HTML
+
+```html
+<button>Click me</button>
+```
+
+### CSS
+```css
+@property --deg {
+    syntax: "<angle>";
+    initial-value: 0turn;
+    inherits: true;
+}
+
+@keyframes rotate {
+    to {
+        --deg: 1turn;
+    }
+}
+
+button {
+    border: 4px solid transparent;
+    background:
+        linear-gradient(white) padding-box,
+        conic-gradient(
+            from var(--deg),
+            limegreen,
+            yellow,
+            limegreen
+        ) border-box;
+    animation: rotate 2s linear infinite;
+
+    /* These will depend on your theme */
+    font: inherit;
+    color: black;
+    padding: .25em 1em;
+    border-radius: .25rem;
+}
+```
+
+## Result
+<AnimatedGradientBorder />
+---
+*First seen [@KevinPowel](https://www.youtube.com/@KevinPowell)*

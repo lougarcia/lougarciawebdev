@@ -4,7 +4,41 @@ import PageSectionHeader from "./PageSectionHeader.astro"
 ---
 <PageSection classes="bg-base-100" id="about">
     <PageSectionHeader class="text-2xl">Blogs</PageSectionHeader>
-    <div class="max-w-md mx-auto">
-        <em class="block text-center">- TBD -</em>
+    <div class="grid grid-cols-2 gap-4">
+        <div class="max-w-md mx-auto rounded-box shadow-md">
+            <ul class="list bg-base-100 ">
+                <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Recent Snippets</li>
+                <li class="list-row">
+                    <div class="text-3xl font-thin opacity-30 tabular-nums">25/09</div>
+                    <div class="list-col-grow">
+                        <div>Animated Gradient Border</div>
+                        <div class="text-xs uppercase font-semibold opacity-60">
+                            Using registered custom properties
+                        </div>
+                    </div>
+                    <a href="/blogs/snippets/animated-gradient-border" class="btn btn-square btn-ghost" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="max-w-md mx-auto rounded-box shadow-md">
+            <ul class="list bg-base-100 ">
+                <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Recent News</li>
+                <li class="list-row">
+                    <div class="text-3xl font-thin opacity-30 tabular-nums">25/09</div>
+                    <div class="list-col-grow">
+                        <div>useFetchState NuxtJS library</div>
+                        <div class="text-xs uppercase font-semibold opacity-60">
+                            An NPM package for NuxtJS. Wraps useFetch in a composable.
+                        </div>
+                    </div>
+                    <a href="/blogs/news/use-fetch-state" class="btn btn-square btn-ghost" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
+
 </PageSection>

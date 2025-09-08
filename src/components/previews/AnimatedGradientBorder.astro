@@ -1,0 +1,35 @@
+---
+---
+<div class="mockup-window border border-base-300 w-full">
+    <div class="grid place-content-center border-t border-base-300 h-60">
+        <button>Click me</button>
+    </div>
+</div>
+
+<style>
+@property --deg {
+    syntax: "<angle>";
+    initial-value: 0turn;
+    inherits: true;
+}
+
+@keyframes rotate {
+    to {
+        --deg: 1turn;
+    }
+}
+
+button {
+    border: 4px solid transparent;
+    background:
+        linear-gradient(white) padding-box,
+        conic-gradient(from var(--deg), limegreen, yellow, limegreen) border-box;
+    animation: rotate 2s linear infinite;
+
+    /* These will depend on your theme */
+    font: inherit;
+    color: black;
+    padding: .25em 1em;
+    border-radius: .25rem;
+}
+</style>

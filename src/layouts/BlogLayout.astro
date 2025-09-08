@@ -12,17 +12,10 @@ const blogLink = header.find(l => l.text === 'Blogs');
 <HtmlLayout>
     <MainLayout>
         <div class="flex flex-row-reverse items-start justify-end gap-8 w-[min(960px,100%)] mx-auto px-2 lg:px-0 py-8">
-            <div>
-                <div class="breadcrumbs text-sm">
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/blogs">Blogs</a></li>
-                        <li>Snippets</li>
-                    </ul>
-                </div>
-                <h1 class="text-4xl font-serif">Snippets</h1>
+            <div class="grow">
+                <slot />
             </div>
-            <aside>
+            <aside class="hidden md:block">
                 <ul>
                     <li class="menu bg-base-200 rounded-box w-44">
                         <h2 class="menu-title">Types</h2>

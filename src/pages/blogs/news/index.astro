@@ -4,7 +4,7 @@ export const prerender = true;
 import BlogLayout from "@/layouts/BlogLayout.astro";
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection('posts')).sort(
+const news = (await getCollection('news')).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
@@ -14,13 +14,14 @@ const posts = (await getCollection('posts')).sort(
         <div class="breadcrumbs text-sm">
             <ul>
                 <li><a href="/">Home</a></li>
-                <li>Blogs</li>
+                <li><a href="/blogs">Blogs</a></li>
+                <li>News</li>
             </ul>
         </div>
-        <h1 class="text-4xl font-serif">Blogs</h1>
+        <h1 class="text-4xl font-serif">News</h1>
         <div class="prose mt-8">
             <ul>
-                {posts.map(post => (
+                {news.map(post => (
                     <li>
                         <a href={`${post.id}`}>
                             {post.data.title}
@@ -31,9 +32,7 @@ const posts = (await getCollection('posts')).sort(
                         <div class="text-sm">
                             {post.data.summary}
                         </div>
-                        <span class="badge badge-sm badge-ghost rounded-xs">
-                            {post.data.postType}
-                        </span>
+                        <span class="badge badge-sm badge-ghost rounded-xs">News</span>
                     </li>
                 ))}
             </ul>
