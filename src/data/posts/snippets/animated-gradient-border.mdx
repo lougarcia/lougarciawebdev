@@ -7,6 +7,7 @@ tags: css, animation, gradient, border
 postType: Snippets
 ---
 import AnimatedGradientBorder from "@/components/previews/AnimatedGradientBorder.astro"
+import AnimatedGradientBorderHoverOnly from "@/components/previews/AnimatedGradientBorderHoverOnly.astro"
 
 # Animated Gradient Border
 
@@ -54,7 +55,26 @@ button {
 }
 ```
 
-## Result
+### Result
 <AnimatedGradientBorder />
+
+## Rotate On-Hover only
+Update the codes with the following to rotate on-hover only.
+
+### CSS
+```css
+button {
+    ...
+    animation-play-state: paused;
+}
+
+button:hover,
+button:focus-visible {
+    animation-play-state: running;
+}
+```
+
+### Result
+<AnimatedGradientBorderHoverOnly />
 ---
 *First seen [@KevinPowel](https://www.youtube.com/@KevinPowell)*
