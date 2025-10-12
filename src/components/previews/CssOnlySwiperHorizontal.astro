@@ -1,0 +1,32 @@
+---
+---
+<div class="container">
+    <div class="wrapper">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+</div>
+
+
+<style>
+.wrapper {
+    --window-width: 300px;
+    display: flex;
+    gap: 20px;
+    width: var(--window-width);
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+.item {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    width: var(--window-width);
+    border-radius: 1rem;
+    text-align: center;
+    align-content: center;
+    height: 300px;
+    background-color: hsl(0 1 1);
+    color: #ccc;
+}
+</style>
