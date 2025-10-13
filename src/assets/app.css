@@ -77,6 +77,11 @@
     font-size: 1.25em;
     scroll-behavior: smooth;
     scroll-padding-top: var(--header-offset);
+    scrollbar-gutter: stable;
+}
+
+@view-transition {
+    navigation: auto;
 }
 
 @keyframes fadeIn {
