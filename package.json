@@ -12,12 +12,12 @@
     "@astrojs/mdx": "^4.3.9",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.15.2",
-    "daisyui": "^5.0.50",
     "resend": "^6.0.1",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250810.0",
-    "@tailwindcss/typography": "^0.5.16"
+    "@tailwindcss/typography": "^0.5.16",
+    "daisyui": "^5.3.10"
   }
 }
