@@ -1,0 +1,49 @@
+---
+export const prerender = true;
+
+import BlogLayout from "@/layouts/BlogLayout.astro";
+
+---
+<BlogLayout>
+    <div
+        x-data="{params:undefined}"
+        x-init="params = new URLSearchParams(window.location.search)"
+    >
+        <h1 class="text-4xl font-serif">Result</h1>
+        <div class="prose mt-8">
+            <ul
+                x-data="{posts:[]}"
+                x-init="posts = await (await fetch('/posts.json')).json()"
+                >
+                <template x-for="post in posts.filter(p => p.tags.includes(params.get('id')))">
+                    <li>
+                        <a
+                            :href="post.slug"
+                            x-text="post.title"
+                        ></a>
+                        
+                        <div
+                            class="text-xs italic"
+                            x-text="new Date(post.pubDate).toDateString()"
+                        ></div>
+                        
+                        <div
+                            class="text-sm"
+                            x-text="post.summary"
+                        ></div>
+                        
+                        <span
+                            class="badge badge-sm badge-ghost rounded-xs"
+                            x-text="post.postType"
+                        ></span>
+                        <div
+                            class="text-xs italic"
+                            >
+                            Tags: <span x-text="post.tags"></span>
+                        </div>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </div>
+</BlogLayout>
