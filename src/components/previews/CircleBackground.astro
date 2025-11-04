@@ -1,0 +1,22 @@
+---
+---
+<div class="container"></div>
+<style>
+.container {
+    --background-color: teal;
+    --circle-color: darkred;
+    width: min(100%, 400px);
+    height: 300px;
+    /* use only 'background' property so the positioning works */
+    background: radial-gradient(
+        1q, /* this creates a circle on any ratio */
+        #0000 20px,
+        var(--circle-color) 0 50px,
+        #0000 0
+    )
+    /* position */
+    /* 0 140px */
+    /* background size(width) */
+    /* / 50px; */
+}
+</style>

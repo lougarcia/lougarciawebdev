@@ -1,0 +1,147 @@
+---
+title: A Simple Guide to Building Dashes with Conic Gradient
+summary: Create background dashes using Conic Gradient
+slug: /blogs/snippets/a-simple-guide-to-building-dashes-with-conic-gradient
+pubDate: 2025-11-04
+tags: css, gradient, background, css-battle, patterns
+postType: Snippets
+---
+import DashesUsginConicGradient from "@/components/previews/DashesUsginConicGradient.astro"
+import CircleBackground from "@/components/previews/CircleBackground.astro"
+
+# A Simple Guide to Building Dashes with Conic Gradient
+
+Create background dashes using Conic Gradient
+
+## Setup
+
+### HTML
+```html
+<div class="container"></div>
+```
+
+### CSS
+
+Set a width and height of the container for this example.
+
+Lets also add a background property so we can see the container. We will update this property later.
+
+```css
+.container {
+    width: min(100%, 400px);
+    height: 300px;
+    background: #99999910;
+}
+```
+#### Preview
+<DashesUsginConicGradient />
+
+We'll now add a simple Conical Gradient background
+
+```css
+.container {
+    ...
+    background:
+        conic-gradient(
+            #0000 75%,
+            darkred 0
+        ),
+        /* we still need this so that we can see the container */
+        #99999910
+}
+```
+
+#### Preview
+<DashesUsginConicGradient classes="step-2" />
+
+Adding coordinates for the center of the conical gradient to create a rectangle
+
+```css
+.container {
+    ...
+    background:
+        conic-gradient(
+            at 40px 10px, /* coordinates */
+            #0000 75%,
+            darkred 0
+        ),
+        #99999910
+}
+```
+
+#### Preview
+<DashesUsginConicGradient classes="step-3" />
+
+Now we position the background to the center of the rectangle. It is important to note that the `background` property is used, otherwise the positioning would NOT work.
+```css
+.container {
+    ...
+    background:
+        conic-gradient(
+            at 40px 10px,
+            #0000 75%,
+            darkred 0
+        ) 180px 140px, /* position */
+        #99999910
+}
+```
+
+#### Preview
+<DashesUsginConicGradient classes="step-4" />
+
+Conical gradients always has a width and height of 100%. Setting the size less than 100% will "tile" (repeat) the background.
+
+To do this, we can set the value after the conical gradient position.
+```css
+.container {
+    ...
+    background:
+        conic-gradient(
+            at 40px 10px,
+            #0000 75%,
+            darkred 0
+        ) 180px 140px /* position */
+            / 60px, /* width */
+        #99999910
+}
+```
+
+#### Preview
+<DashesUsginConicGradient classes="step-5" />
+
+Setting a height, will get us this:
+```css
+.container {
+    ...
+    background:
+        conic-gradient(
+            at 40px 10px,
+            #0000 75%,
+            darkred 0
+        ) 180px 140px /* position */
+            / 60px 100px, /* width and height */
+        #99999910
+}
+```
+
+#### Preview
+<DashesUsginConicGradient classes="step-5-alternate" />
+
+### Altogether
+```css
+.container {
+    width: min(100%, 400px);
+    height: 300px;
+    background:
+        conic-gradient(
+            at 40px 10px,
+            #0000 75%,
+            darkred 0
+        ) 180px 140px / 60px,
+        #99999910
+}
+```
+
+## Codepen
+Use this link to Codepen and play around the values
+https://codepen.io/lougarcia/pen/qEbvQbL

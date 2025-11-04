@@ -1,0 +1,68 @@
+---
+const { classes } = Astro.props
+---
+<div class={`container ${classes}`}></div>
+<style>
+.container {
+    --background-color: #0000;
+    --dash-color: darkred;
+    width: min(100%, 400px);
+    height: 300px;
+    background: #99999920;
+
+    &.step-2 {
+        background: conic-gradient(
+            var(--background-color) 75%,
+            var(--dash-color) 0
+        ),
+        #99999920
+    }
+
+    &.step-3 {
+        background: conic-gradient(
+            at 40px 10px,
+            var(--background-color) 75%,
+            var(--dash-color) 0
+        ),
+        #99999920
+    }
+
+    &.step-4 {
+        background: conic-gradient(
+            at 40px 10px,
+            var(--background-color) 75%,
+            var(--dash-color) 0
+        ) 180px 140px,
+        #99999920
+    }
+
+    &.step-5 {
+        background: conic-gradient(
+            at 40px 10px,
+            var(--background-color) 75%,
+            var(--dash-color) 0
+        ) 180px 140px / 60px,
+        #99999920
+    }
+
+    &.step-5-alternate {
+        background: conic-gradient(
+            at 40px 10px,
+            var(--background-color) 75%,
+            var(--dash-color) 0
+        ) 180px 140px / 60px 100px,
+        #99999920
+    }
+    /* use only 'background' property so the positioning works */
+    /* background: conic-gradient(
+        at 40px 20px,
+        var(--background-color) 75%,
+        var(--dash-color) 0
+    ) */
+    /* position */
+    /* 0 140px */
+    /* background size(width) */
+    /* / 50px; */
+
+}
+</style>
