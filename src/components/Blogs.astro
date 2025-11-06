@@ -9,6 +9,7 @@ const posts = (await getCollection('posts')).sort(
 
 const recentSnippet = posts.find(post => post.data.postType == 'Snippets');
 const recentNews = posts.find(post => post.data.postType == 'News');
+const recentTutorials = posts.find(post => post.data.postType == 'Tutorials');
 
 const formattedDate = (dateValue:Date) => {
     const month = new Date(dateValue).getDate().toString().padStart(2, '0');

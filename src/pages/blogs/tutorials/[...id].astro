@@ -5,9 +5,9 @@ import BlogLayout from "@/layouts/BlogLayout.astro";
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
-    const posts = await getCollection('posts', (post) => post.data.postType === 'Snippets');
+    const posts = await getCollection('posts', (post) => post.data.postType === 'Tutorials');
     return posts.map(post => ({
-        params: { id: post.data.slug.replace(/^\/blogs\/snippets\//, '') },
+        params: { id: post.data.slug.replace(/^\/blogs\/tutorials\//, '') },
         props: { post },
     }));
 }
@@ -21,11 +21,11 @@ const { Content } = await render(post);
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/blogs">Blogs</a></li>
-                <li><a href="/blogs/snippets">Snippets</a></li>
+                <li><a href="/blogs/tutorials">Tutorials</a></li>
                 <li>{post.data.title}</li>
             </ul>
         </div>
-        <div class="prose prose-h1:font-serif">
+        <div class="prose">
             <Content />
         </div>
     </div>

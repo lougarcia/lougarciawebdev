@@ -5,7 +5,7 @@ import BlogLayout from "@/layouts/BlogLayout.astro";
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
-    const posts = await getCollection('news');
+    const posts = await getCollection('posts', (post) => post.data.postType === 'News');
     return posts.map(post => ({
         params: { id: post.data.slug.replace(/^\/blogs\/news\//, '') },
         props: { post },

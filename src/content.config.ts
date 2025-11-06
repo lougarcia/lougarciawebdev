@@ -17,16 +17,11 @@ const postSchema = z.object({
     slug: z.string(),
     pubDate: z.date(),
     tags: z.string().optional(),
-    postType: z.enum(['Snippets', 'News']).optional()
+    postType: z.enum(['Snippets', 'News', 'Tutorials']).optional()
 })
 
 const posts = defineCollection({
     loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/data/posts" }),
-    schema: postSchema
-})
-
-const snippets = defineCollection({
-    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/data/posts/snippets" }),
     schema: postSchema
 })
 
@@ -36,4 +31,4 @@ const news = defineCollection({
 })
 
 
-export const collections = { experiences, snippets, news, posts }
+export const collections = { experiences, news, posts }

@@ -4,7 +4,7 @@ export const prerender = true;
 import BlogLayout from "@/layouts/BlogLayout.astro";
 import { getCollection } from "astro:content";
 
-const news = (await getCollection('news')).sort(
+const news = (await getCollection('posts', (post) => post.data.postType === 'News')).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
