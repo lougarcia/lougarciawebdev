@@ -12,53 +12,34 @@ const recentNews = posts.find(post => post.data.postType == 'News');
 const recentTutorials = posts.find(post => post.data.postType == 'Tutorials');
 
 const formattedDate = (dateValue:Date) => {
-    const month = new Date(dateValue).getDate().toString().padStart(2, '0');
-    const year = new Date(dateValue).getMonth().toString().padStart(2, '0');
-
-    return `${month}/${year}`;
+    return new Date(dateValue).toDateString()
 }
----
-<PageSection classes="bg-base-100" id="about">
-    <PageSectionHeader class="text-2xl">Blogs</PageSectionHeader>
-    <div class="flex flex-col md:grid md:grid-cols-2 gap-4">
-        <div class="max-w-md mx-auto rounded-box shadow-md bg-base-200">
-            <div class="p-4 pb-2 text-xs opacity-60 tracking-wide">Recent Snippets</div>
-            <ul class="list">
-                <li class="list-row">
-                    <div class="text-3xl font-thin opacity-30 tabular-nums">
-                        {formattedDate(recentSnippet?.data.pubDate as Date)}
-                    </div>
-                    <div class="list-col-grow">
-                        <div>{recentSnippet?.data.title}</div>
-                        <div class="text-xs uppercase font-semibold opacity-60">
-                            {recentSnippet?.data.summary}
-                        </div>
-                    </div>
-                    <a href={recentSnippet?.data.slug} class="btn btn-square btn-ghost" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="max-w-md mx-auto rounded-box shadow-md bg-base-200">
-            <div class="p-4 pb-2 text-xs opacity-60 tracking-wide">Recent News</div>
-            <ul class="list">
-                <li class="list-row">
-                    <div class="text-3xl font-thin opacity-30 tabular-nums">
-                        {formattedDate(recentNews?.data.pubDate as Date)}
-                    </div>
-                    <div class="list-col-grow">
-                        <div>{recentNews?.data.title}</div>
-                        <div class="text-xs uppercase font-semibold opacity-60">
-                            {recentNews?.data.summary}
-                        </div>
-                    </div>
-                    <a href={recentNews?.data.slug} class="btn btn-square btn-ghost" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
 
+const items = [recentSnippet, recentNews]
+---
+<PageSection classes="bg-base-100 max-w-lg mx-auto" id="about">
+    <PageSectionHeader class="text-2xl">Blogs</PageSectionHeader>
+    <div class="grid gap-4">
+        {items.map((item) => {
+            return (
+                <div class="rounded-box border border-base-300 px-4 py-3">
+                    <div class="font-semibold">
+                        {item?.data.title}
+                    </div>
+                    <div class="text-xs opacity-80 tabular-nums">
+                        {formattedDate(item?.data.pubDate as Date)}
+                    </div>
+                    <div class="text-sm opacity-80 mt-4">
+                        {item?.data.summary}
+                    </div>
+                    <div class="mt-2">
+                        <a href={item?.data.slug} class="text-sm flex gap-1 items-center text-secondary-content" target="_blank">
+                            Read more
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                        </a>
+                    </div>
+                </div>
+            )
+        })}
+    </div>
 </PageSection>
