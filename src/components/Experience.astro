@@ -21,7 +21,7 @@ const experiences = (await getCollection('experiences')).sort(
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 20 20"
                             fill="currentColor"
-                            class="h-5 w-5 -translate-y-1"
+                            class="h-5 w-5"
                         >
                             <path
                             fill-rule="evenodd"
@@ -31,9 +31,9 @@ const experiences = (await getCollection('experiences')).sort(
                         </svg>
                     </div>
                     <div class:list={[i%2==0 ? 'timeline-end ': 'timeline-start md:text-end', 'mb-10 ']}>
-                        <time class="font-mono font-sm block">{expi.data.duration}</time>
-                        <div class="text-lg font-black">{expi.data.title}</div>
-                        <div class="font-serif italic mb-2">{expi.data.company}</div>
+                        <div class="text-lg font-bold">{expi.data.title}</div>
+                        <div class="text-sm font-serif opacity-65">{expi.data.company}</div>
+                        <time class="text-sm block opacity-65 mb-2">{expi.data.duration}</time>
                         <div class="font-sans mb-2 prose">{expi.data.summary}</div>
                         <button class="link" onclick={`modal_${i}.showModal()`}>Read more...</button>
                         <dialog id={`modal_${i}`} class="modal">
