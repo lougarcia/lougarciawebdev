@@ -4,9 +4,13 @@ import PageSectionHeader from "./PageSectionHeader.astro";
 
 ---
 <PageSection classes="bg-base-200">
-    <PageSectionHeader class="text-2xl">Get In Touch</PageSectionHeader>
-    <div class="max-w-lg text-center m-auto grid gap-4">
-        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out.</p>
+    <PageSectionHeader class="text-2xl">
+        Get In Touch
+        <p slot="subtitle" class="prose font-sans mt-2 md:mt-4 max-w-xl text-center m-auto">
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out.
+        </p>
+    </PageSectionHeader>
+    <div class="max-w-lg text-center m-auto grid gap-2">
         <div class="mt-4">
             <a href="mailto:Lou Garcia<bizlougarcia@gmail.com>?subject=Inquiry" class="btn btn-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
