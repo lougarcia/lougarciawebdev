@@ -11,7 +11,7 @@
   --color-base-200: oklch(0.94 0 0);
   --color-base-300: oklch(0.9 0 0);
   --color-base-content: oklch(0.32 0 0);
-  --color-primary: oklch(0.59 0.1 245.75); /* steelblue */
+  --color-primary: oklch(0.55 0.1 245.75); /* steelblue */
   --color-primary-content: oklch(0.99 0 0);
   --color-secondary: oklch(23.27% 0.0249 284.3);
   --color-secondary-content: oklch(73.92% 0.2135 50.94);
