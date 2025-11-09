@@ -1,5 +1,6 @@
 ---
-import GithubDark from "@/assets/icons/github_dark.svg"
+import GithubDarkIcon from "@/assets/icons/github_dark.svg"
+import GithubLightIcon from "@/assets/icons/github_light.svg"
 import OpenLink from "@/assets/icons/open_in_new.svg"
 import NoImage from "@/assets/icons/no_image.svg"
 import { Image } from "astro:assets"
@@ -19,8 +20,9 @@ const {githubLink, checkoutLink, checkoutText, classes} = Astro.props
         </h3>
         <slot name="projectDescription" />
         <div class="card-actions justify-end flex-nowrap">
-            <a href={githubLink ? githubLink : '#'} target="_blank" class="btn btn-accent text-sm">
-                <GithubDark width={24} height={24}/>
+            <a href={githubLink ? githubLink : '#'} target="_blank" class="btn btn-square shadow text-sm">
+                <GithubDarkIcon width={24} height={24} class="hidden dark:block" />
+                <GithubLightIcon width={24} height={24} class="block dark:hidden" />
             </a>
             {checkoutLink ? (
                 <a href={checkoutLink ? checkoutLink : '#'} target="_blank" class="btn btn-accent">
