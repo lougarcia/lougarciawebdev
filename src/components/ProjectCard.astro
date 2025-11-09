@@ -25,12 +25,12 @@ const {githubLink, checkoutLink, checkoutText, classes} = Astro.props
                 <GithubLightIcon width={24} height={24} class="block dark:hidden" />
             </a>
             {checkoutLink ? (
-                <a href={checkoutLink ? checkoutLink : '#'} target="_blank" class="btn btn-accent">
+                <a href={checkoutLink ? checkoutLink : '#'} target="_blank" class="btn btn-primary">
                     {checkoutText ? checkoutText : 'Check it out'}
                     <OpenLink fill="currentColor" />
                 </a>
             ) : (
-                <div class="btn btn-accent">
+                <div class="btn btn-primary">
                     {checkoutText ? checkoutText : 'Check it out'}
                 </div>
             )}
