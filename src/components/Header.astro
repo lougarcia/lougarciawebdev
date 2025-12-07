@@ -1,12 +1,15 @@
 ---
 import {header as links} from "@/data/navLinks"
 import DownArrow from "@/assets/icons/arrow_back_2.svg"
+import MyLogo from "@/assets/icons/mylogo003.svg"
 ---
 <header class="bg-surface sticky top-0 z-50 shadow-sm">
     <div class="mb-8 shadow-lg dark:shadow-2xl bg-base-200 dark:bg-base-200 fixed top-0 z-1 w-full">
         <div class="navbar w-[min(1248px,100%)] m-[0_auto] min-h-auto">
             <div class="navbar-start flex-1/6">
-                <a href="/" class="btn px-1 hover:bg-base-300 font-bold font-mono text-xl">&lbrace;lg&rbrace;</a>
+                <a href="/" class="btn px-1 font-bold font-mono text-xl">
+                    <MyLogo class="w-8 fill-primary dark:fill-base-content"/>
+                </a>
             </div>
             <div class="navbar-end flex-5/6">
                 <ul class="menu menu-horizontal px-1 py-0 hidden lg:flex gap-3">
@@ -39,7 +42,9 @@ import DownArrow from "@/assets/icons/arrow_back_2.svg"
                         <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
                         <ul class="menu bg-base-200 text-base-content min-h-full w-70 p-4 text-xl">
                             <li class="flex flex-row font-bold font-mono">
-                                <a href="/"  class="w-full">&lbrace;lg&rbrace;</a>
+                                <a href="/"  class="w-full">
+                                    <MyLogo class="w-8 fill-primary dark:fill-base-content"/>
+                                </a>
                             </li>
                             {links.map(link => (
                                 <li><a href={link.href}>{link.text}</a></li>
