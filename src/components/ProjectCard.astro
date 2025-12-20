@@ -5,7 +5,7 @@ import OpenLink from "@/assets/icons/open_in_new.svg"
 import NoImage from "@/assets/icons/no_image.svg"
 import { Image } from "astro:assets"
 
-const {githubLink, checkoutLink, checkoutText, classes} = Astro.props
+const {githubLink, checkoutLink, checkoutText, classes, name} = Astro.props
 
 ---
 <div class:list={[`card bg-base-100 shadow-sm`, classes]}>
@@ -20,7 +20,7 @@ const {githubLink, checkoutLink, checkoutText, classes} = Astro.props
         </h3>
         <slot name="projectDescription" />
         <div class="card-actions justify-end flex-nowrap">
-            <a href={githubLink ? githubLink : '#'} target="_blank" class="btn btn-square shadow text-sm">
+            <a href={githubLink ? githubLink : '#'} target="_blank" class="btn btn-square shadow text-sm" title={`Link to ${name} github page`}>
                 <GithubDarkIcon width={24} height={24} class="hidden dark:block" />
                 <GithubLightIcon width={24} height={24} class="block dark:hidden" />
             </a>
